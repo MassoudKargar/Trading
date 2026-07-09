@@ -1,6 +1,6 @@
 ﻿using Trading.Core.Resources.Shared.Base;
 
-namespace Trading.Core.RequestResponse.Orders.Commands.SetStopLoss;s
+namespace Trading.Core.RequestResponse.Orders.Commands.SetStopLoss;
 
 public sealed class SetStopLossCommand : ICommand
 {

@@ -1,6 +1,4 @@
-﻿using Trading.Core.Resources.Enumerations.Orders;
-using Trading.Core.Resources.Enumerations.Positions;
-using Trading.Core.Resources.Shared.Base;
+﻿using Trading.Core.Resources.Enumerations.Positions;
 
 namespace Trading.Core.Contracts.Positions.Queries;
 

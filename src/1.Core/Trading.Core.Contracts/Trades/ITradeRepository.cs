@@ -1,7 +1,6 @@
 ﻿using Trading.Core.Domain.Trades;
-using Trading.Core.Resources.Shared.Base;
 
-namespace Trading.Core.Contracts.Data.Commands;
+namespace Trading.Core.Contracts.Trades;
 
 public interface ITradeRepository
     : ICommandRepository<Trade, BaseEntityId>

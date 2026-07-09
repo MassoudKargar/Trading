@@ -1,7 +1,4 @@
-﻿using Base.Core.Contracts.Data.Queries;
-
-using Trading.Core.Contracts.Orders.QueryResults;
-using Trading.Core.Resources.Shared.Base;
+﻿using Trading.Core.Contracts.Orders.QueryResults;
 
 namespace Trading.Core.Contracts.Orders;
 

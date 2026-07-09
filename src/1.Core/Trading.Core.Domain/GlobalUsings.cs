@@ -3,4 +3,3 @@
 global using Base.Core.Domains.Entities;
 global using Base.Core.Domains.Events;
 global using Base.Core.Domains.ValueObjects;
-global using Trading.Core.Domain.Enumerations;

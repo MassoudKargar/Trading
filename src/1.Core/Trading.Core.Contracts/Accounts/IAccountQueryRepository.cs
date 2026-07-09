@@ -1,6 +1,4 @@
-﻿using Base.Core.Contracts.Data.Queries;
-
-using Trading.Core.Contracts.Accounts.QueryResults;
+﻿using Trading.Core.Contracts.Accounts.QueryResults;
 
 namespace Trading.Core.Contracts.Accounts;
 

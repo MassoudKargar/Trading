@@ -1,7 +1,4 @@
-﻿using Trading.Core.Resources.Enumerations.Orders;
-using Trading.Core.Resources.Shared.Base;
-
-namespace Trading.Core.Contracts.Orders.QueryResults;
+﻿namespace Trading.Core.Contracts.Orders.QueryResults;
 
 public sealed class GetOrderByIdQueryResult
 {

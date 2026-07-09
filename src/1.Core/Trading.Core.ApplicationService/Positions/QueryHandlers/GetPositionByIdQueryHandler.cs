@@ -14,7 +14,7 @@ public sealed class GetPositionByIdQueryHandler(
     {
         return await ResultAsync(
             await repository.GetByIdAsync(
-                query.PositionId!,
+                query.PositionId.Value,
                 cancellationToken));
     }
 }

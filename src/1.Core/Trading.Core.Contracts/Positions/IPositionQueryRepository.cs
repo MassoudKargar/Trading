@@ -1,7 +1,4 @@
-﻿using Base.Core.Contracts.Data.Queries;
-
-using Trading.Core.Contracts.Positions.Queries;
-using Trading.Core.Resources.Shared.Base;
+﻿using Trading.Core.Contracts.Positions.Queries;
 
 namespace Trading.Core.Contracts.Positions;
 
