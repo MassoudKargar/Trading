@@ -1,4 +1,4 @@
-﻿namespace Trading.Core.Domain.Enumerations.Risk;
+﻿namespace Trading.Core.Domain.Enumerations.Risks;
 
 public enum RiskLevel
 {

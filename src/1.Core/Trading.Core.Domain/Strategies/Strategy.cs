@@ -1,5 +1,6 @@
-﻿using Trading.Core.Domain.Enumerations.Strategy;
-using Trading.Core.Domain.Events.Strategy;
+﻿using Trading.Core.Domain.Enumerations.Strategies;
+using Trading.Core.Domain.Events.Strategies;
+using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.Domain.Strategies;
 

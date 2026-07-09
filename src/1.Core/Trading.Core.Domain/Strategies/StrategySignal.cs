@@ -1,4 +1,6 @@
-﻿namespace Trading.Core.Domain.Strategies;
+﻿using Trading.Core.Domain.Enumerations.Strategies;
+
+namespace Trading.Core.Domain.Strategies;
 
 public sealed class StrategySignal
 {

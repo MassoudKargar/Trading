@@ -1,4 +1,4 @@
-﻿namespace Trading.Core.Domain.Enumerations;
+﻿namespace Trading.Core.Domain.Enumerations.Strategies;
 
 public enum SignalType
 {

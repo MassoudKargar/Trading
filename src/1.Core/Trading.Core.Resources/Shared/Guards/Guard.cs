@@ -1,4 +1,4 @@
-﻿namespace Trading.Core.Domain.Shared.Guards;
+﻿namespace Trading.Core.Resources.Shared.Guards;
 public static class Guard
 {
     public static void AgainstNull(object? value, string name)

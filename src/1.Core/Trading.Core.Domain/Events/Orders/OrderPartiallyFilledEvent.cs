@@ -1,4 +1,6 @@
-﻿namespace Trading.Core.Domain.Events.Orders;
+﻿using Trading.Core.Resources.Shared.Base;
+
+namespace Trading.Core.Domain.Events.Orders;
 
 public sealed record OrderPartiallyFilledEvent(
     BaseEntityId OrderId,

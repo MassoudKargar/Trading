@@ -1,4 +1,4 @@
-﻿namespace Trading.Core.Domain.Shared.Results;
+﻿namespace Trading.Core.Resources.Shared.Results;
 
 
 public class Result

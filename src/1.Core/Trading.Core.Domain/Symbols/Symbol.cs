@@ -1,4 +1,7 @@
-﻿namespace Trading.Core.Domain.Symbols;
+﻿using Trading.Core.Resources.Shared.Base;
+using Trading.Core.Resources.Shared.Guards;
+
+namespace Trading.Core.Domain.Symbols;
 
 public sealed class Symbol : AggregateRoot<BaseEntityId>
 {

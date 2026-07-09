@@ -1,4 +1,5 @@
 ﻿using Trading.Core.Domain.Events.Portfolio;
+using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.Domain.Portfolio;
 

@@ -1,4 +1,4 @@
-﻿namespace Trading.Core.Domain.Enumerations;
+﻿namespace Trading.Core.Domain.Enumerations.Orders;
 
 public enum OrderType
 {

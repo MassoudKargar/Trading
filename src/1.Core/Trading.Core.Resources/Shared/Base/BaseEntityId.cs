@@ -1,4 +1,4 @@
-﻿namespace Trading.Core.Domain.Shared.Base;
+﻿namespace Trading.Core.Resources.Shared.Base;
 
 public readonly record struct BaseEntityId(long Value)
     : IComparable,

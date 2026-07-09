@@ -1,6 +1,8 @@
 ﻿using System.Security.Principal;
 
 using Trading.Core.Domain.Events.Accounts;
+using Trading.Core.Resources.Shared.Base;
+using Trading.Core.Resources.Shared.Guards;
 
 namespace Trading.Core.Domain.Accounts;
 

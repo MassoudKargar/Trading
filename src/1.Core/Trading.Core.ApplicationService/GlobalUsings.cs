@@ -1,0 +1,12 @@
+// Global using directives
+
+global using Base.Core.ApplicationServices.Commands;
+global using Base.Core.ApplicationServices.Queries;
+global using Base.Core.RequestResponse.Commands;
+global using Base.Core.RequestResponse.Queries;
+global using Base.Utility;
+global using Trading.Core.Contracts.Accounts.QueryResults;
+global using Trading.Core.Contracts.Data.Commands;
+global using Trading.Core.Contracts.Data.Queries;
+global using Trading.Core.Domain.Accounts;
+global using Trading.Core.RequestResponse.Accounts.Commands.CreateAccount;

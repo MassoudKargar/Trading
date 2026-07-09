@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace Trading.Core.Domain.Shared.Interfaces;
+namespace Trading.Core.Resources.Shared.Interfaces;
 
 public abstract record EntityId(Guid Value): IComparable, IComparable<Guid>, IConvertible, IEquatable<Guid>, IFormattable
 {

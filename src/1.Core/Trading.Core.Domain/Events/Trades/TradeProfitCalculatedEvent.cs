@@ -1,4 +1,6 @@
-﻿namespace Trading.Core.Domain.Events.Trades;
+﻿using Trading.Core.Resources.Shared.Base;
+
+namespace Trading.Core.Domain.Events.Trades;
 
 public sealed record TradeProfitCalculatedEvent(
     BaseEntityId TradeId,

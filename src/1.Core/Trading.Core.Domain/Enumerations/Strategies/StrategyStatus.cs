@@ -1,4 +1,4 @@
-﻿namespace Trading.Core.Domain.Enumerations.Strategy;
+﻿namespace Trading.Core.Domain.Enumerations.Strategies;
 
 public enum StrategyStatus
 {

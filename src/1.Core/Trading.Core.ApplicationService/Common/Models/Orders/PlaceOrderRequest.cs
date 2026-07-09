@@ -1,5 +1,4 @@
-﻿using Trading.Core.Domain.Enumerations;
-using Trading.Core.Domain.Enumerations.Orders;
+﻿using Trading.Core.Domain.Enumerations.Orders;
 
 namespace Trading.Core.ApplicationService.Common.Models.Orders;
 

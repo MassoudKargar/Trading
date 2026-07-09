@@ -1,4 +1,6 @@
-﻿namespace Trading.Core.Domain.Accounts;
+﻿using Trading.Core.Resources.Shared.Guards;
+
+namespace Trading.Core.Domain.Accounts;
 
 public sealed class Margin : BaseValueObject<Margin>
 {
