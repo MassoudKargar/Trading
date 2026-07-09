@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.Withdraw;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.Withdraw;
 
 public sealed class WithdrawCommandValidator : AbstractValidator<WithdrawCommand>
 {

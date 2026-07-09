@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.CloseAccount;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.CloseAccount;
 
 public sealed class CloseAccountCommandValidator : AbstractValidator<CloseAccountCommand>
 {

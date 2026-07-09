@@ -1,6 +1,4 @@
-﻿using Base.Core.RequestResponse.Commands;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.Deposit;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.Deposit;
 
 public sealed class DepositCommand : ICommand
 {

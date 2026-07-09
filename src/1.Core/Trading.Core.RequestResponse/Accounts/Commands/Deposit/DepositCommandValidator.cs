@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.Deposit;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.Deposit;
 
 public sealed class DepositCommandValidator : AbstractValidator<DepositCommand>
 {

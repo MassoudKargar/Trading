@@ -1,4 +1,4 @@
-﻿using Trading.Core.Domain.Enumerations.Symbols;
+﻿using Trading.Core.Resources.Enumerations.Symbols;
 
 namespace Trading.Core.ApplicationService.Common.Models.Symbols;
 

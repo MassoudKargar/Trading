@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.ChangeLeverage;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.ChangeLeverage;
 
 public sealed class ChangeLeverageCommandValidator : AbstractValidator<ChangeLeverageCommand>
 {

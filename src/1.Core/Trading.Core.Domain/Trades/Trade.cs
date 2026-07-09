@@ -1,6 +1,6 @@
-﻿using Trading.Core.Domain.Enumerations.Orders;
-using Trading.Core.Domain.Enumerations.Trades;
-using Trading.Core.Domain.Events.Trades;
+﻿using Trading.Core.Domain.Events.Trades;
+using Trading.Core.Resources.Enumerations.Orders;
+using Trading.Core.Resources.Enumerations.Trades;
 using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.Domain.Trades;

@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.UnfreezeAccount;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.UnfreezeAccount;
 
 public sealed class UnfreezeAccountCommandValidator : AbstractValidator<UnfreezeAccountCommand>
 {

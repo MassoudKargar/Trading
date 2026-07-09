@@ -8,5 +8,8 @@ global using Base.Utility;
 global using Trading.Core.Contracts.Accounts.QueryResults;
 global using Trading.Core.Contracts.Data.Commands;
 global using Trading.Core.Contracts.Data.Queries;
+global using Trading.Core.Contracts.Orders.QueryResults;
 global using Trading.Core.Domain.Accounts;
 global using Trading.Core.RequestResponse.Accounts.Commands.CreateAccount;
+global using Trading.Core.Resources.Enumerations.Orders;
+global using Trading.Core.Resources.Shared.Base;

@@ -1,6 +1,4 @@
-﻿using Trading.Core.Domain.Enumerations.Orders;
-
-namespace Trading.Core.ApplicationService.Common.Models.Trades;
+﻿namespace Trading.Core.ApplicationService.Common.Models.Trades;
 
 public sealed record TradeInfo(
     string TradeId,

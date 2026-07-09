@@ -1,6 +1,6 @@
-﻿using Trading.Core.Domain.Enumerations.Orders;
-using Trading.Core.Domain.Enumerations.Positions;
-using Trading.Core.Domain.Events.Positions;
+﻿using Trading.Core.Domain.Events.Positions;
+using Trading.Core.Resources.Enumerations.Orders;
+using Trading.Core.Resources.Enumerations.Positions;
 using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.Domain.Positions;

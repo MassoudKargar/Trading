@@ -1,6 +1,4 @@
-﻿using Trading.Core.Domain.Enumerations.Orders;
-
-namespace Trading.Core.ApplicationService.Common.Models.Orders;
+﻿namespace Trading.Core.ApplicationService.Common.Models.Orders;
 
 public sealed record PlaceOrderRequest(
     string Symbol,

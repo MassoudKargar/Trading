@@ -1,6 +1,4 @@
-﻿using Base.Core.RequestResponse.Commands;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.ChangeLeverage;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.ChangeLeverage;
 
 public sealed class ChangeLeverageCommand : ICommand
 {

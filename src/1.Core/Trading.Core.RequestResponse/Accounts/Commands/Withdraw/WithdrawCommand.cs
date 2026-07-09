@@ -1,6 +1,4 @@
-﻿using Base.Core.RequestResponse.Commands;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.Withdraw;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.Withdraw;
 
 public sealed class WithdrawCommand : ICommand
 {

@@ -1,5 +1,4 @@
-﻿using Base.Core.RequestResponse.Commands;
-using Trading.Core.Resources.Shared.Base;
+﻿using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.RequestResponse.Accounts.Commands.CreateAccount;
 

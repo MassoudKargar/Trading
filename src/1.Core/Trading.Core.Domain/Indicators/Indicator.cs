@@ -1,4 +1,5 @@
 ﻿using Trading.Core.Domain.Events.Indicators;
+using Trading.Core.Resources.Enumerations;
 using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.Domain.Indicators;

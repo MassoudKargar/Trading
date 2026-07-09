@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.CreateAccount;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.CreateAccount;
 
 public sealed class CreateAccountCommandValidator : AbstractValidator<CreateAccountCommand>
 {

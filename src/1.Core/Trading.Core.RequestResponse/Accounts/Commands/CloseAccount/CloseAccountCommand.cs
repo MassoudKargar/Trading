@@ -1,6 +1,4 @@
-﻿using Base.Core.RequestResponse.Commands;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.CloseAccount;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.CloseAccount;
 
 public sealed class CloseAccountCommand : ICommand
 {

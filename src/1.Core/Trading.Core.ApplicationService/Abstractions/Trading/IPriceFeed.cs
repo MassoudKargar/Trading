@@ -1,5 +1,5 @@
 ﻿using Trading.Core.ApplicationService.Common.Models.Markets;
-using Trading.Core.Domain.Enumerations.Markets;
+using Trading.Core.Resources.Enumerations.Markets;
 
 namespace Trading.Core.ApplicationService.Abstractions.Trading;
 

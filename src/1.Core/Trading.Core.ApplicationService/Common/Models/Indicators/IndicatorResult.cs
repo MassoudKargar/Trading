@@ -1,5 +1,5 @@
 ﻿using Trading.Core.ApplicationService.Common.Models.Markets;
-using Trading.Core.Domain.Enumerations;
+using Trading.Core.Resources.Enumerations;
 
 namespace Trading.Core.ApplicationService.Common.Models.Indicators;
 

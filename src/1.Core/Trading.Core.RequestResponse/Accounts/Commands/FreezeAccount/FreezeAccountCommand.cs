@@ -1,6 +1,4 @@
-﻿using Base.Core.RequestResponse.Commands;
-
-namespace Trading.Core.RequestResponse.Accounts.Commands.FreezeAccount;
+﻿namespace Trading.Core.RequestResponse.Accounts.Commands.FreezeAccount;
 
 public sealed class FreezeAccountCommand : ICommand
 {

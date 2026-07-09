@@ -1,4 +1,4 @@
-﻿using Trading.Core.Domain.Enumerations.Markets;
+﻿using Trading.Core.Resources.Enumerations.Markets;
 
 namespace Trading.Core.ApplicationService.Common.Models.Markets;
 

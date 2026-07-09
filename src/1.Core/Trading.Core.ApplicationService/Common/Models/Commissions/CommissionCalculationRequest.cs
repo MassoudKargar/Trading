@@ -1,6 +1,4 @@
-﻿using Trading.Core.Domain.Enumerations.Orders;
-
-namespace Trading.Core.ApplicationService.Common.Models.Commissions;
+﻿namespace Trading.Core.ApplicationService.Common.Models.Commissions;
 
 public sealed record CommissionCalculationRequest(
     string Symbol,

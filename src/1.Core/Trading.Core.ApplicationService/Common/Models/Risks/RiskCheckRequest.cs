@@ -1,5 +1,4 @@
 ﻿using Trading.Core.ApplicationService.Common.Models.Accounts;
-using Trading.Core.Domain.Enumerations.Orders;
 
 namespace Trading.Core.ApplicationService.Common.Models.Risks;
 

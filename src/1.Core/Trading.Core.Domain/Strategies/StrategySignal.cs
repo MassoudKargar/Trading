@@ -1,4 +1,4 @@
-﻿using Trading.Core.Domain.Enumerations.Strategies;
+﻿using Trading.Core.Resources.Enumerations.Strategies;
 
 namespace Trading.Core.Domain.Strategies;
 

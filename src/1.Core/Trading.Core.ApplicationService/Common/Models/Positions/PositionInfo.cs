@@ -1,4 +1,4 @@
-﻿using Trading.Core.Domain.Enumerations.Positions;
+﻿using Trading.Core.Resources.Enumerations.Positions;
 
 namespace Trading.Core.ApplicationService.Common.Models.Positions;
 
