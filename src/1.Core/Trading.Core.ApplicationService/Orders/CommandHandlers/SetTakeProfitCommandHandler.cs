@@ -1,4 +1,6 @@
 ﻿using Base.Core.RequestResponse.Common;
+
+using Trading.Core.Contracts.Orders;
 using Trading.Core.RequestResponse.Orders.Commands.SetTakeProfit;
 
 namespace Trading.Core.ApplicationService.Orders.CommandHandlers;

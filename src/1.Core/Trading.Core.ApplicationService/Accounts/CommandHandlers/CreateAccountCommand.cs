@@ -1,4 +1,6 @@
-﻿namespace Trading.Core.ApplicationService.Accounts.CommandHandlers;
+﻿using Trading.Core.Contracts.Accounts;
+
+namespace Trading.Core.ApplicationService.Accounts.CommandHandlers;
 
 public sealed class CreateAccountCommandHandler(
     BaseServices baseServices,

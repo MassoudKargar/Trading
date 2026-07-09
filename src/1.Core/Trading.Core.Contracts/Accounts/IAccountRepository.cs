@@ -1,7 +1,7 @@
 ﻿using Trading.Core.Domain.Accounts;
 using Trading.Core.Resources.Shared.Base;
 
-namespace Trading.Core.Contracts.Data.Commands;
+namespace Trading.Core.Contracts.Accounts;
 
 public interface IAccountRepository
     : ICommandRepository<Account, BaseEntityId>

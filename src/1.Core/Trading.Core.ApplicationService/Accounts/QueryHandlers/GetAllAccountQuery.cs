@@ -1,5 +1,7 @@
 ﻿using Base.Core.ApplicationServices.Queries.Extensions;
 
+using Trading.Core.Contracts.Accounts;
+
 namespace Trading.Core.ApplicationService.Accounts.QueryHandlers;
 
 public sealed class GetAllAccountQuery(

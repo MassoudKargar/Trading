@@ -1,4 +1,5 @@
-﻿using Trading.Core.Domain.Orders;
+﻿using Trading.Core.Contracts.Orders;
+using Trading.Core.Domain.Orders;
 using Trading.Core.RequestResponse.Orders.Commands.PlaceOrder;
 
 namespace Trading.Core.ApplicationService.Orders.CommandHandlers;

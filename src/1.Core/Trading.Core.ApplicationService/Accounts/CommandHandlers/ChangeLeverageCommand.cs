@@ -1,4 +1,5 @@
-﻿using Trading.Core.RequestResponse.Accounts.Commands.ChangeLeverage;
+﻿using Trading.Core.Contracts.Accounts;
+using Trading.Core.RequestResponse.Accounts.Commands.ChangeLeverage;
 
 namespace Trading.Core.ApplicationService.Accounts.CommandHandlers;
 

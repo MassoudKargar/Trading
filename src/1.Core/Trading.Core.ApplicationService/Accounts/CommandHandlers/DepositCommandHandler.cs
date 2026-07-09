@@ -1,4 +1,5 @@
-﻿using Trading.Core.RequestResponse.Accounts.Commands.Deposit;
+﻿using Trading.Core.Contracts.Accounts;
+using Trading.Core.RequestResponse.Accounts.Commands.Deposit;
 
 namespace Trading.Core.ApplicationService.Accounts.CommandHandlers;
 

@@ -3,7 +3,7 @@
 using Trading.Core.Contracts.Orders.QueryResults;
 using Trading.Core.Resources.Shared.Base;
 
-namespace Trading.Core.Contracts.Data.Queries;
+namespace Trading.Core.Contracts.Orders;
 
 public interface IOrderQueryRepository
     : IQueryRepository

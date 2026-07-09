@@ -2,7 +2,7 @@
 
 using Trading.Core.Contracts.Accounts.QueryResults;
 
-namespace Trading.Core.Contracts.Data.Queries;
+namespace Trading.Core.Contracts.Accounts;
 
 public interface IAccountQueryRepository : IQueryRepository
 {

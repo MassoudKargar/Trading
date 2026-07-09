@@ -1,4 +1,5 @@
-﻿using Trading.Core.RequestResponse.Accounts.Commands.UnfreezeAccount;
+﻿using Trading.Core.Contracts.Accounts;
+using Trading.Core.RequestResponse.Accounts.Commands.UnfreezeAccount;
 
 namespace Trading.Core.ApplicationService.Accounts.CommandHandlers;
 

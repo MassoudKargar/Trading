@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using Trading.Core.Contracts.Orders;
 using Trading.Core.RequestResponse.Orders.Commands.CancelOrder;
 
 namespace Trading.Core.ApplicationService.Orders.CommandHandlers;

@@ -1,4 +1,5 @@
-﻿using Trading.Core.RequestResponse.Accounts.Commands.CloseAccount;
+﻿using Trading.Core.Contracts.Accounts;
+using Trading.Core.RequestResponse.Accounts.Commands.CloseAccount;
 
 namespace Trading.Core.ApplicationService.Accounts.CommandHandlers;
 

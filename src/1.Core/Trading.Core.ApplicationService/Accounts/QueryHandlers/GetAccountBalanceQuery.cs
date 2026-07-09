@@ -1,4 +1,6 @@
-﻿namespace Trading.Core.ApplicationService.Accounts.QueryHandlers;
+﻿using Trading.Core.Contracts.Accounts;
+
+namespace Trading.Core.ApplicationService.Accounts.QueryHandlers;
 
 public sealed class GetAccountBalanceQuery(
     BaseServices baseServices,

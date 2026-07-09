@@ -55,7 +55,7 @@ public sealed class Position : AggregateRoot<BaseEntityId>
     public DateTime OpenedAt { get; }
 
     public DateTime? ClosedAt { get; private set; }
-
+    public bool IsTrailingStopEnabled { get; private set; }
     public void UpdatePrice(decimal currentPrice)
     {
         CurrentPrice = currentPrice;
@@ -142,6 +142,7 @@ public sealed class Position : AggregateRoot<BaseEntityId>
     }
     public void ActivateTrailingStop(decimal stopLoss)
     {
+        IsTrailingStopEnabled = true;
         StopLoss = stopLoss;
 
         AddEvent(new PositionTrailingStopActivatedEvent(

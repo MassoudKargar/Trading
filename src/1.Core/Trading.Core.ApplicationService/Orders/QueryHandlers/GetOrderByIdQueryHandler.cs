@@ -1,4 +1,6 @@
-﻿namespace Trading.Core.ApplicationService.Orders.QueryHandlers;
+﻿using Trading.Core.Contracts.Orders;
+
+namespace Trading.Core.ApplicationService.Orders.QueryHandlers;
 
 public sealed class GetOrderByIdQueryHandler(
     BaseServices baseServices,

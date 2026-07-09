@@ -1,5 +1,7 @@
 ﻿using Base.Core.ApplicationServices.Queries.Extensions;
 
+using Trading.Core.Contracts.Orders;
+
 namespace Trading.Core.ApplicationService.Orders.QueryHandlers;
 
 public sealed class GetOpenOrdersQueryHandler(
