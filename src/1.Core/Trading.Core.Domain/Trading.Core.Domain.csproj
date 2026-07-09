@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Base.Core.Domains" Version="10.0.0" />
+    <PackageReference Include="Base.Core.Domains.Toolkits" Version="10.0.0" />
+    <PackageReference Include="OpenTelemetry.Api" Version="1.16.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Trading.Core.Resources\Trading.Core.Resources.csproj" />
+  </ItemGroup>
+</Project>

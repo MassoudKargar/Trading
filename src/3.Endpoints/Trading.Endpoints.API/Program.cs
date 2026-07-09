@@ -1,0 +1,1 @@
+﻿WebApplication.CreateBuilder(args).ConfigureServices().ConfigurePipeline(args).Run();

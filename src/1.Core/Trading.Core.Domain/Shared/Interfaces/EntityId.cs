@@ -1,0 +1,118 @@
+﻿using System.Security.Cryptography;
+
+namespace Trading.Core.Domain.Shared.Interfaces;
+
+public abstract record EntityId(Guid Value): IComparable, IComparable<Guid>, IConvertible, IEquatable<Guid>, IFormattable
+{
+    public static Guid NewId()
+        => Guid.CreateVersion7();
+
+    public int CompareTo(Guid other)
+    {
+        throw new NotImplementedException();
+    }
+
+    public virtual bool Equals(Guid other)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override string ToString()
+        => $"{nameof(Value)}: {Value}";
+
+    public int CompareTo(object? obj)
+    {
+        throw new NotImplementedException();
+    }
+
+    public string ToString(string? format, IFormatProvider? formatProvider)
+    {
+        FormattableString formattable = $"{nameof(Value)}: {Value}";
+        return formattable.ToString(formatProvider);
+    }
+
+    public TypeCode GetTypeCode()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool ToBoolean(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public byte ToByte(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public char ToChar(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public DateTime ToDateTime(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public decimal ToDecimal(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public double ToDouble(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public short ToInt16(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public int ToInt32(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public long ToInt64(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public sbyte ToSByte(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public float ToSingle(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public string ToString(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public object ToType(Type conversionType, IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ushort ToUInt16(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public uint ToUInt32(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ulong ToUInt64(IFormatProvider? provider)
+    {
+        throw new NotImplementedException();
+    }
+}
