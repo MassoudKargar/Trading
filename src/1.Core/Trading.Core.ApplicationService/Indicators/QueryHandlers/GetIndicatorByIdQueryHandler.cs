@@ -15,7 +15,7 @@ public sealed class GetIndicatorByIdQueryHandler(
     {
         return await ResultAsync(
             await repository.GetByIdAsync(
-                query.IndicatorId!,
+                query.IndicatorId.Value!,
                 cancellationToken));
     }
 }
