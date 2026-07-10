@@ -8,7 +8,7 @@
 
 ---
 
-![.NET](https://img.shields.io/badge/.NET-9-purple)
+![.NET](https://img.shields.io/badge/.NET-10-purple)
 ![Architecture](https://img.shields.io/badge/Architecture-Clean-blue)
 ![DDD](https://img.shields.io/badge/DDD-Enterprise-success)
 ![CQRS](https://img.shields.io/badge/CQRS-Enabled-orange)
