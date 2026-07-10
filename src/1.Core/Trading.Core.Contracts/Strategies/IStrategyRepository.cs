@@ -1,6 +1,6 @@
 ﻿using Trading.Core.Domain.Strategies;
 
-namespace Trading.Core.Contracts.Data.Commands;
+namespace Trading.Core.Contracts.Strategies;
 
 public interface IStrategyRepository
     : ICommandRepository<Strategy, BaseEntityId>
