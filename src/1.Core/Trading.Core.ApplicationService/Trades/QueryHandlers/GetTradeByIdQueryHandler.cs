@@ -13,7 +13,7 @@ public sealed class GetTradeByIdQueryHandler(
     {
         return await ResultAsync(
             await repository.GetByIdAsync(
-                query.TradeId!,
+                query.TradeId.Value!,
                 cancellationToken));
     }
 }
