@@ -11,4 +11,7 @@
     <ProjectReference Include="..\Trading.Core.Domain\Trading.Core.Domain.csproj" />
     <ProjectReference Include="..\Trading.Core.RequestResponse\Trading.Core.RequestResponse.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Commands\" />
+  </ItemGroup>
 </Project>

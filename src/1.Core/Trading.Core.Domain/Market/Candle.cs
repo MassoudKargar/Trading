@@ -61,6 +61,7 @@ public sealed class Candle : AggregateRoot<BaseEntityId>
 
     public void CloseCandle(DateTime closeTime)
     {
+        IsClosed = true;
         CloseTime = closeTime;
         AddEvent(new CandleClosedEvent(
             Id,
