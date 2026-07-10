@@ -1,10 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Base.Core.RequestResponse.Common;
 
-namespace Trading.Core.ApplicationService.RiskManagement.CommandHandlers
+using Trading.Core.Contracts.RiskManagement;
+using Trading.Core.RequestResponse.RiskManagement.Commands.RemoveRiskRule;
+
+namespace Trading.Core.ApplicationService.RiskManagement.CommandHandlers;
+
+public sealed class RemoveRiskRuleCommandHandler(
+    BaseServices baseServices,
+    IRiskProfileRepository repository)
+    : CommandHandler<RemoveRiskRuleCommand>(baseServices)
 {
-    internal class RemoveRiskRuleCommandHandler
+    public override async Task<CommandResult> Handle(
+        RemoveRiskRuleCommand command,
+        CancellationToken cancellationToken)
     {
+        var profile = await repository.GetAsync(
+            command.RiskProfileId,
+            cancellationToken);
+
+        if (profile is null)
+            return Result(ApplicationServiceStatus.NotFound);
+
+        profile.RemoveRule(
+            command.Name);
+
+        await repository.CommitAsync(
+            cancellationToken);
+
+        return Ok();
     }
 }

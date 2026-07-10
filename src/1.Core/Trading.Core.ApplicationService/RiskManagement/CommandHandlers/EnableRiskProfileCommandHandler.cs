@@ -1,10 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Base.Core.RequestResponse.Common;
 
-namespace Trading.Core.ApplicationService.RiskManagement.CommandHandlers
+using Trading.Core.Contracts.RiskManagement;
+using Trading.Core.RequestResponse.RiskManagement.Commands.EnableRiskProfile;
+
+namespace Trading.Core.ApplicationService.RiskManagement.CommandHandlers;
+
+public sealed class EnableRiskProfileCommandHandler(
+    BaseServices baseServices,
+    IRiskProfileRepository repository)
+    : CommandHandler<EnableRiskProfileCommand>(baseServices)
 {
-    internal class EnableRiskProfileCommandHandler
+    public override async Task<CommandResult> Handle(
+        EnableRiskProfileCommand command,
+        CancellationToken cancellationToken)
     {
+        var profile = await repository.GetAsync(
+            command.RiskProfileId,
+            cancellationToken);
+
+        if (profile is null)
+            return Result(ApplicationServiceStatus.NotFound);
+
+        profile.Enable();
+
+        await repository.CommitAsync(
+            cancellationToken);
+
+        return Ok();
     }
 }
