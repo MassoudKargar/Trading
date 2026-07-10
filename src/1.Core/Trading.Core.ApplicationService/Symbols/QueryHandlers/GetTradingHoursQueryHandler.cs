@@ -1,4 +1,5 @@
-﻿using Trading.Core.Contracts.Symbols.Queries;
+﻿using Trading.Core.Contracts.Symbols;
+using Trading.Core.Contracts.Symbols.Queries;
 
 namespace Trading.Core.ApplicationService.Symbols.QueryHandlers;
 
@@ -14,7 +15,7 @@ public sealed class GetTradingHoursQueryHandler(
     {
         return await ResultAsync(
             await repository.GetTradingHoursAsync(
-                query.SymbolId!,
+                query.SymbolId.Value!,
                 cancellationToken));
     }
 }

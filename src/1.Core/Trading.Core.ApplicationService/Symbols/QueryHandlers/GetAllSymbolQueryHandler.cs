@@ -1,5 +1,5 @@
 ﻿using Base.Core.ApplicationServices.Queries.Extensions;
-
+using Trading.Core.Contracts.Symbols;
 using Trading.Core.Contracts.Symbols.Queries;
 
 namespace Trading.Core.ApplicationService.Symbols.QueryHandlers;
