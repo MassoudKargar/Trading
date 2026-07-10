@@ -1,4 +1,4 @@
-﻿namespace Trading.Core.Contracts.Data.Queries;
+﻿namespace Trading.Core.Contracts.Indicators;
 
 public interface IIndicatorQueryRepository
     : IQueryRepository
