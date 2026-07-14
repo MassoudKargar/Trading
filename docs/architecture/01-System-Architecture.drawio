@@ -1,0 +1,49 @@
+from xml.sax.saxutils import escape
+
+xml = """<mxfile host="app.diagrams.net" modified="2026-07-14T00:00:00Z" agent="ChatGPT" version="24.7.0">
+  <diagram id="system" name="System Architecture">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="api" value="Trading API&#10;REST / SignalR / gRPC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cmd" value="Command Pipeline&#10;Validation&#10;CommandHandlers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="420" y="170" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="qry" value="Query Pipeline&#10;QueryHandlers&#10;QueryRepositories" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="170" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="domain" value="DOMAIN&#10;Accounts | Orders | Positions | Trades&#10;Portfolio | Strategies | Indicators&#10;Risk | Symbols | Tick | Candle | OrderBook" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="360" y="360" width="1000" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="infra" value="Infrastructure&#10;EF Core&#10;Repositories&#10;SQL Server&#10;Redis&#10;Message Bus" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="420" y="660" width="360" height="170" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="brokers" value="Broker Integrations&#10;MT5&#10;Binance&#10;Bybit&#10;OKX" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="940" y="660" width="360" height="170" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="api" target="cmd"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="api" target="qry"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="cmd" target="domain"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="qry" target="domain"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="domain" target="infra"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="infra" target="brokers"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+"""
+path="/mnt/data/01-System-Architecture.drawio"
+with open(path,"w",encoding="utf-8") as f:
+    f.write(xml)
+print(path)
