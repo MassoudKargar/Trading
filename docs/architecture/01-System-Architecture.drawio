@@ -43,7 +43,7 @@ xml = """<mxfile host="app.diagrams.net" modified="2026-07-14T00:00:00Z" agent="
   </diagram>
 </mxfile>
 """
-path="/mnt/data/01-System-Architecture.drawio"
+path="Trading/docs/architecture/01-System-Architecture.drawio"
 with open(path,"w",encoding="utf-8") as f:
     f.write(xml)
 print(path)
