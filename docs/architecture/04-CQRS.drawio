@@ -1,6 +1,4 @@
-from textwrap import dedent
 
-xml = dedent("""
 <mxfile host="app.diagrams.net" version="24.7.0">
   <diagram id="cqrs" name="CQRS">
     <mxGraphModel>
@@ -68,9 +66,3 @@ xml = dedent("""
     </mxGraphModel>
   </diagram>
 </mxfile>
-""")
-
-path="/mnt/data/04-CQRS.drawio"
-with open(path,"w",encoding="utf-8") as f:
-    f.write(xml)
-print(path)
