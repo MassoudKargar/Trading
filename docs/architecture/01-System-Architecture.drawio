@@ -1,6 +1,4 @@
-from xml.sax.saxutils import escape
-
-xml = """<mxfile host="app.diagrams.net" modified="2026-07-14T00:00:00Z" agent="ChatGPT" version="24.7.0">
+<mxfile host="app.diagrams.net" modified="2026-07-14T00:00:00Z" agent="ChatGPT" version="24.7.0">
   <diagram id="system" name="System Architecture">
     <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080">
       <root>
@@ -42,8 +40,3 @@ xml = """<mxfile host="app.diagrams.net" modified="2026-07-14T00:00:00Z" agent="
     </mxGraphModel>
   </diagram>
 </mxfile>
-"""
-path="Trading/docs/architecture/01-System-Architecture.drawio"
-with open(path,"w",encoding="utf-8") as f:
-    f.write(xml)
-print(path)
