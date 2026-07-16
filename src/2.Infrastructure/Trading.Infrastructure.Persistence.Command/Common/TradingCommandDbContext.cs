@@ -1,6 +1,6 @@
 ﻿using Base.Infra.Data.Sql.Commands;
 
-namespace Trading.Infra.Data.Sql.Commands.Common;
+namespace Trading.Infrastructure.Persistence.Command.Common;
 
 public class TradingCommandDbContext(DbContextOptions<TradingCommandDbContext> options) : BaseCommandDbContext(options)
 {

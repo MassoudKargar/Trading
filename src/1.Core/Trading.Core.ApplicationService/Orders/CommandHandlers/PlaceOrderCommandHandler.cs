@@ -14,6 +14,10 @@ public sealed class PlaceOrderCommandHandler(
         CancellationToken cancellationToken)
     {
         var order = new Order(
+            command.AccountId,
+            command.PortfolioId,
+            command.StrategyId,
+            command.Broker,
             command.Symbol,
             command.OrderType,
             command.Side,
@@ -26,9 +30,23 @@ public sealed class PlaceOrderCommandHandler(
         if (command.TakeProfit.HasValue)
             order.SetTakeProfit(command.TakeProfit.Value);
 
-        await repository.InsertAsync(order, cancellationToken);
+        if (command.TriggerPrice.HasValue &&
+            command.Expiration.HasValue)
+        {
+            order.SetPendingOrder(
+                command.TriggerPrice.Value,
+                command.Expiration.Value);
+        }
 
-        await repository.CommitAsync(cancellationToken);
+        if (command.MagicNumber > 0)
+            order.SetMagicNumber(command.MagicNumber);
+
+        await repository.InsertAsync(
+            order,
+            cancellationToken);
+
+        await repository.CommitAsync(
+            cancellationToken);
 
         return Ok();
     }

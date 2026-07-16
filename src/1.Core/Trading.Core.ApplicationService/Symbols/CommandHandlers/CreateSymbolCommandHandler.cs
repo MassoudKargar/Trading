@@ -1,4 +1,5 @@
-﻿using Trading.Core.Domain.Symbols;
+﻿using Trading.Core.Contracts.Symbols;
+using Trading.Core.Domain.Symbols;
 using Trading.Core.RequestResponse.Symbols.Commands.CreateSymbol;
 
 namespace Trading.Core.ApplicationService.Symbols.CommandHandlers;

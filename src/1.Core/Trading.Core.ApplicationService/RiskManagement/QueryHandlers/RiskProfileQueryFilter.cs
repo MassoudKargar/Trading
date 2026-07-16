@@ -1,4 +1,3 @@
-using Trading.Core.Contracts.RiskManagement;
 using Trading.Core.Contracts.RiskManagement.Queries;
 
 using static Trading.Core.ApplicationService.RiskManagement.QueryHandlers.RiskProfileQueryFilter;

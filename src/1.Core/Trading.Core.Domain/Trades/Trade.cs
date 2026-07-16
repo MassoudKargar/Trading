@@ -55,6 +55,23 @@ public sealed class Trade : AggregateRoot<BaseEntityId>
     public DateTime EntryTime { get; private set; }
 
     public DateTime? ExitTime { get; private set; }
+    public BaseEntityId AccountId { get; private set; }
+
+    public BaseEntityId PortfolioId { get; private set; }
+
+    public BaseEntityId? StrategyId { get; private set; }
+
+    public BaseEntityId OrderId { get; private set; }
+
+    public string Broker { get; private set; } = default!;
+
+    public string? BrokerTradeId { get; private set; }
+
+    public long MagicNumber { get; private set; }
+
+    public DateTime CreatedAt { get; }
+
+    public DateTime? UpdatedAt { get; private set; }
 
     public TradeStatus Status { get; private set; } = TradeStatus.Open;
 

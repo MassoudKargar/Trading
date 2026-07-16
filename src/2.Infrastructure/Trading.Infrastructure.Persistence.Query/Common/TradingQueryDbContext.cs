@@ -1,4 +1,4 @@
-﻿namespace Trading.Infra.Data.Sql.Queries.Common;
+﻿namespace Trading.Infrastructure.Persistence.Query.Common;
 
 public class TradingQueryDbContext(DbContextOptions<TradingQueryDbContext> options)
     : BaseQueryDbContext(options);

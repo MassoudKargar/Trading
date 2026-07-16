@@ -51,11 +51,25 @@ public sealed class Position : AggregateRoot<BaseEntityId>
     public PositionStatus Status { get; private set; }
 
     public PositionPnL Profit { get; private set; }
+    public BaseEntityId AccountId { get; private set; }
+
+    public BaseEntityId OrderId { get; private set; }
+
+    public BaseEntityId? StrategyId { get; private set; }
+
+    public string Broker { get; private set; } = default!;
+
+    public string? BrokerPositionId { get; private set; }
+
+    public long MagicNumber { get; private set; }
+
+    public DateTime? UpdatedAt { get; private set; }
 
     public DateTime OpenedAt { get; }
 
     public DateTime? ClosedAt { get; private set; }
     public bool IsTrailingStopEnabled { get; private set; }
+    public BaseEntityId PortfolioId { get; private set; }
     public void UpdatePrice(decimal currentPrice)
     {
         CurrentPrice = currentPrice;

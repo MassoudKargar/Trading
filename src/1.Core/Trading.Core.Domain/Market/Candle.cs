@@ -1,4 +1,5 @@
 ﻿using Trading.Core.Domain.Events.Markets;
+using Trading.Core.Resources.Enumerations.Markets;
 using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.Domain.Market;
@@ -7,7 +8,7 @@ public sealed class Candle : AggregateRoot<BaseEntityId>
 {
     public Candle(
         string symbol,
-        string timeFrame,
+        TimeFrame timeFrame,
         DateTime openTime)
     {
         Id = BaseEntityId.New();
@@ -23,7 +24,7 @@ public sealed class Candle : AggregateRoot<BaseEntityId>
 
     public string Symbol { get; private set; } = default!;
 
-    public string TimeFrame { get; private set; } = default!;
+    public TimeFrame TimeFrame { get; private set; }
 
     public DateTime OpenTime { get; private set; }
 

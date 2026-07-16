@@ -31,46 +31,9 @@ public sealed class Portfolio : AggregateRoot<BaseEntityId>
 
     public PortfolioStatistics Statistics { get; private set; }
 
-    public IReadOnlyCollection<BaseEntityId> Positions
-        => _positions.AsReadOnly();
-
-    public IReadOnlyCollection<BaseEntityId> Trades
-        => _trades.AsReadOnly();
-
     public DateTime CreatedAt { get; }
 
     public DateTime? UpdatedAt { get; private set; }
-
-    public void AddPosition(BaseEntityId positionId)
-    {
-        if (!_positions.Contains(positionId))
-            _positions.Add(positionId);
-
-        UpdatedAt = DateTime.UtcNow;
-        AddEvent(new PortfolioPositionAddedEvent(
-            Id,
-            positionId));
-    }
-
-    public void RemovePosition(BaseEntityId positionId)
-    {
-        _positions.Remove(positionId);
-
-        UpdatedAt = DateTime.UtcNow;
-        AddEvent(new PortfolioPositionRemovedEvent(
-            Id,
-            positionId));
-    }
-
-    public void AddTrade(BaseEntityId tradeId)
-    {
-        _trades.Add(tradeId);
-
-        UpdatedAt = DateTime.UtcNow;
-        AddEvent(new PortfolioTradeAddedEvent(
-            Id,
-            tradeId));
-    }
 
     public void UpdateStatistics(
         decimal balance,
@@ -112,10 +75,4 @@ public sealed class Portfolio : AggregateRoot<BaseEntityId>
             Id,
             Statistics.Drawdown));
     }
-
-    public int OpenPositions
-        => _positions.Count;
-
-    public int TotalTrades
-        => _trades.Count;
 }

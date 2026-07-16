@@ -27,6 +27,7 @@ public sealed class Strategy : AggregateRoot<BaseEntityId>
     }
 
     public string Name { get; private set; } = default!;
+    public BaseEntityId StrategyId { get; private set; }
     public StrategyStatus Status { get; private set; }
 
     public StrategyType Type { get; private set; }

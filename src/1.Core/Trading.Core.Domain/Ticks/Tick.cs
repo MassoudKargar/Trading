@@ -1,7 +1,7 @@
 ﻿using Trading.Core.Domain.Events.Markets;
 using Trading.Core.Resources.Shared.Base;
 
-namespace Trading.Core.Domain.Market;
+namespace Trading.Core.Domain.Ticks;
 
 public sealed class Tick : AggregateRoot<BaseEntityId>
 {
@@ -32,6 +32,15 @@ public sealed class Tick : AggregateRoot<BaseEntityId>
     public decimal Last => (Bid + Ask) / 2m;
 
     public DateTime Time { get; private set; }
+    public string Broker { get; private set; } = default!;
+
+    public decimal? LastPrice { get; private set; }
+
+    public decimal? Volume { get; private set; }
+
+    public DateTime ServerTime { get; private set; }
+
+    public DateTime ReceivedAt { get; private set; }
 
     public void Update(decimal bid, decimal ask)
     {

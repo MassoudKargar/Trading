@@ -1,10 +1,11 @@
-﻿using Trading.Core.Resources.Shared.Base;
+﻿using Trading.Core.Resources.Enumerations.Markets;
+using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.Domain.Events.Markets;
 
 public sealed record CandleOpenedEvent(
     BaseEntityId CandleId,
     string Symbol,
-    string TimeFrame,
+    TimeFrame TimeFrame,
     DateTime OpenTime)
     : DomainEvent;

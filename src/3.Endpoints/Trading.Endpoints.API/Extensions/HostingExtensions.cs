@@ -2,6 +2,9 @@
 
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
+using Trading.Infrastructure.Persistence.Command.Common;
+using Trading.Infrastructure.Persistence.Query.Common;
+
 namespace Trading.Endpoints.API.Extensions;
 
 public static class HostingExtensions

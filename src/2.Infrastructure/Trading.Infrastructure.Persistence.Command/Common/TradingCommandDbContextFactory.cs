@@ -1,4 +1,4 @@
-﻿namespace Trading.Infra.Data.Sql.Commands.Common;
+﻿namespace Trading.Infrastructure.Persistence.Command.Common;
 
 public class TradingCommandDbContextFactory : IDesignTimeDbContextFactory<TradingCommandDbContext>
 {

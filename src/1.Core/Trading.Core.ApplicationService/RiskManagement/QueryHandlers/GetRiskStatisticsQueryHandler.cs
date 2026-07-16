@@ -1,4 +1,5 @@
 ﻿using Trading.Core.Contracts.RiskManagement;
+using Trading.Core.Contracts.RiskManagement.Queries;
 
 namespace Trading.Core.ApplicationService.RiskManagement.QueryHandlers;
 

@@ -1,4 +1,7 @@
-﻿using Trading.Core.Contracts.Portfolio.Queries;
+﻿using Base.Core.RequestResponse.Queries;
+
+using Trading.Core.Contracts.Portfolio.Queries;
+using Trading.Core.Resources.Shared.Base;
 
 namespace Trading.Core.ApplicationService.Portfolio.QueryHandlers;
 
@@ -11,16 +14,28 @@ public sealed class PortfolioQueryFilter()
     public sealed class SortPortfolioPropertyNames : ISortablePropertyCollection
     {
         public const string PortfolioId = nameof(PortfolioId);
+
         public const string AccountId = nameof(AccountId);
-        public const string Balance = nameof(Balance);
-        public const string Equity = nameof(Equity);
-        public const string TotalProfit = nameof(TotalProfit);
+
         public const string CreatedAt = nameof(CreatedAt);
 
-        public string GetDefault() => CreatedAt;
+        public const string UpdatedAt = nameof(UpdatedAt);
+
+        public const string Balance = nameof(Balance);
+
+        public const string Equity = nameof(Equity);
+
+        public const string FloatingProfit = nameof(FloatingProfit);
+
+        public const string RealizedProfit = nameof(RealizedProfit);
+
+        public const string Drawdown = nameof(Drawdown);
+
+        public string GetDefault()
+            => CreatedAt;
     }
 
-    public BaseEntityId? PortfolioId { get; set; }
+    public BaseEntityId? PortfolioId { get; init; }
 
-    public BaseEntityId? AccountId { get; set; }
+    public BaseEntityId? AccountId { get; init; }
 }

@@ -5,9 +5,8 @@ global using Base.Core.ApplicationServices.Queries;
 global using Base.Core.RequestResponse.Commands;
 global using Base.Core.RequestResponse.Queries;
 global using Base.Utility;
+
 global using Trading.Core.Contracts.Accounts.QueryResults;
-global using Trading.Core.Contracts.Data.Commands;
-global using Trading.Core.Contracts.Data.Queries;
 global using Trading.Core.Contracts.Orders.QueryResults;
 global using Trading.Core.Contracts.Trades;
 global using Trading.Core.Domain.Accounts;

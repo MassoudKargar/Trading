@@ -1,5 +1,6 @@
 ﻿using Base.Core.RequestResponse.Common;
 
+using Trading.Core.Contracts.Symbols;
 using Trading.Core.RequestResponse.Symbols.Commands.UpdateLotSize;
 
 namespace Trading.Core.ApplicationService.Symbols.CommandHandlers;

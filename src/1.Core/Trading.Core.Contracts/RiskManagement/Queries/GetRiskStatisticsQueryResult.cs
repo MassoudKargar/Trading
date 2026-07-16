@@ -1,6 +1,6 @@
 ﻿using Trading.Core.Resources.Shared.Base;
 
-namespace Trading.Core.Contracts.RiskManagement;
+namespace Trading.Core.Contracts.RiskManagement.Queries;
 
 public sealed class GetRiskStatisticsQueryResult
 {

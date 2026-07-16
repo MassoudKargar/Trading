@@ -1,6 +1,6 @@
 ﻿using Trading.Core.Contracts.Strategies.Queries;
 
-namespace Trading.Core.Contracts.Data.Queries;
+namespace Trading.Core.Contracts.Strategies;
 
 public interface IStrategyQueryRepository : IQueryRepository
 {

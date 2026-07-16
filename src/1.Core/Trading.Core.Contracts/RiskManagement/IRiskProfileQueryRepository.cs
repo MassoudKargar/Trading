@@ -1,7 +1,6 @@
-﻿using Trading.Core.Contracts.RiskManagement;
-using Trading.Core.Contracts.RiskManagement.Queries;
+﻿using Trading.Core.Contracts.RiskManagement.Queries;
 
-namespace Trading.Core.Contracts.Data.Queries;
+namespace Trading.Core.Contracts.RiskManagement;
 
 public interface IRiskProfileQueryRepository : IQueryRepository
 {

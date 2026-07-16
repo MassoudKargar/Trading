@@ -31,7 +31,11 @@
 		<ProjectReference Include="..\..\1.Core\Trading.Core.Contracts\Trading.Core.Contracts.csproj" />
 		<ProjectReference Include="..\..\1.Core\Trading.Core.Domain\Trading.Core.Domain.csproj" />
 		<ProjectReference Include="..\..\2.Infrastructure\Trading.Infrastructure.Caching.Redis\Trading.Infrastructure.Caching.Redis.csproj" />
-		<ProjectReference Include="..\..\2.Infra\Data\Trading.Infra.Data.Sql.Commands\Trading.Infra.Data.Sql.Commands.csproj" />
-		<ProjectReference Include="..\..\2.Infra\Data\Trading.Infra.Data.Sql.Queries\Trading.Infra.Data.Sql.Queries.csproj" />
+		<ProjectReference Include="..\..\2.Infrastructure\Trading.Infrastructure.Messaging\Trading.Infrastructure.Messaging.csproj" />
+		<ProjectReference Include="..\..\2.Infrastructure\Trading.Infrastructure.Persistence.Command\Trading.Infrastructure.Persistence.Command.csproj" />
+		<ProjectReference Include="..\..\2.Infrastructure\Trading.Infrastructure.Persistence.Query\Trading.Infrastructure.Persistence.Query.csproj" />
+		<ProjectReference Include="..\..\2.Infrastructure\Trading.Infrastructure.Tools\Trading.Infrastructure.Tools.csproj" />
+		<ProjectReference Include="..\..\2.Infrastructure\Trading.Infrastructure.TradingProviders\Trading.Infrastructure.TradingProviders.csproj" />
+		<ProjectReference Include="..\Trading.BackgroundWorker\Trading.BackgroundWorker.csproj" />
 	</ItemGroup>
 </Project>
