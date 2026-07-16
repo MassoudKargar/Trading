@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="24.7.0">
+  <diagram id="broker-arch" name="09-Broker-Architecture">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="api" value="Trading API" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="exec" value="Execution Service" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="520" y="150" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="factory" value="Broker Factory" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="adapter" value="IBrokerAdapter" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="520" y="370" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="mt5" value="MT5 Adapter" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="120" y="520" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="binance" value="Binance Adapter" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="360" y="520" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bybit" value="Bybit Adapter" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="600" y="520" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="okx" value="OKX Adapter" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="840" y="520" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sim" value="Simulator Adapter" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="520" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="api" target="exec"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="exec" target="factory"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="factory" target="adapter"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="adapter" target="mt5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="adapter" target="binance"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="adapter" target="bybit"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="adapter" target="okx"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="adapter" target="sim"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

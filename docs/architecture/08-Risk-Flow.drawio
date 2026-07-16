@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="24.7.0">
+  <diagram id="risk-flow" name="08-Risk-Flow">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="market" value="Market Signal" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="strategy" value="Strategy" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="profile" value="Risk Profile" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="540" y="80" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rules" value="Risk Rules&#10;- Risk/Trade&#10;- Daily Loss&#10;- Drawdown&#10;- Max Positions&#10;- Max Volume" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="780" y="40" width="220" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="decision" value="Risk Check" style="rhombus;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="75" width="120" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="reject" value="Reject Order" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="20" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="approve" value="Approve Order" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="140" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="order" value="Order Service" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="780" y="280" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="broker" value="Broker Adapter" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="280" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="market" target="strategy"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="strategy" target="profile"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="profile" target="rules"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="rules" target="decision"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="No" edge="1" parent="1" source="decision" target="reject"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="Yes" edge="1" parent="1" source="decision" target="approve"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="approve" target="order"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="order" target="broker"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

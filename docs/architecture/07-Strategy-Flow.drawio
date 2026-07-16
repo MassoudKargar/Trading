@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="24.7.0">
+  <diagram id="strategy-flow" name="07-Strategy-Flow">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="m" value="Market Data&#10;(Tick / Candle)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="80" y="60" width="180" height="70" as="geometry"/></mxCell>
+        <mxCell id="i" value="Indicators" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="320" y="60" width="180" height="70" as="geometry"/></mxCell>
+        <mxCell id="s" value="Strategy Engine" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="560" y="60" width="220" height="70" as="geometry"/></mxCell>
+        <mxCell id="sig" value="Trading Signal" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1"><mxGeometry x="840" y="60" width="180" height="70" as="geometry"/></mxCell>
+        <mxCell id="risk" value="Risk Management" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="1080" y="60" width="200" height="70" as="geometry"/></mxCell>
+        <mxCell id="order" value="Order Service" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="560" y="220" width="220" height="70" as="geometry"/></mxCell>
+        <mxCell id="broker" value="Broker Adapter" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="840" y="220" width="180" height="70" as="geometry"/></mxCell>
+        <mxCell id="position" value="Position / Trade" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="1080" y="220" width="200" height="70" as="geometry"/></mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="m" target="i"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="i" target="s"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="s" target="sig"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="sig" target="risk"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="risk" target="order"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="order" target="broker"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="broker" target="position"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

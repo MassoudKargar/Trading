@@ -1,0 +1,24 @@
+<mxfile host="app.diagrams.net" version="24.7.0"><diagram id="erd" name="Database ERD"><mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="2" value="<b>Accounts</b><br/>PK Id<br/>BrokerId<br/>Balance<br/>Equity<br/>Margin" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="3" value="<b>Portfolios</b><br/>PK Id<br/>FK AccountId" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="340" y="40" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="4" value="<b>Positions</b><br/>PK Id<br/>FK PortfolioId<br/>FK SymbolId<br/>FK StrategyId" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="640" y="40" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="5" value="<b>Orders</b><br/>PK Id<br/>FK PositionId" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="940" y="40" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="6" value="<b>Trades</b><br/>PK Id<br/>FK PositionId" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="1240" y="40" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="7" value="<b>Strategies</b><br/>PK Id<br/>Name<br/>Type" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="40" y="280" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="8" value="<b>Indicators</b><br/>PK Id<br/>FK StrategyId" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="340" y="280" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="9" value="<b>RiskProfiles</b><br/>PK Id<br/>Name" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="640" y="280" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="10" value="<b>Symbols</b><br/>PK Id<br/>Name<br/>BaseCurrency<br/>QuoteCurrency" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="940" y="280" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="11" value="<b>Ticks</b><br/>PK Id<br/>FK SymbolId<br/>Bid<br/>Ask" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="1240" y="280" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="12" value="<b>Candles</b><br/>PK Id<br/>FK SymbolId<br/>TimeFrame" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="940" y="520" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="13" value="<b>OrderBooks</b><br/>PK Id<br/>FK SymbolId" style="shape=swimlane;html=1;rounded=0;startSize=28;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="1240" y="520" width="220" height="150" as="geometry"/></mxCell>
+<mxCell id="100" edge="1" parent="1" source="2" target="3"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="101" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="102" edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="103" edge="1" parent="1" source="4" target="6"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="104" edge="1" parent="1" source="7" target="4"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="105" edge="1" parent="1" source="7" target="8"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="106" edge="1" parent="1" source="10" target="4"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="107" edge="1" parent="1" source="10" target="11"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="108" edge="1" parent="1" source="10" target="12"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="109" edge="1" parent="1" source="10" target="13"><mxGeometry relative="1" as="geometry"/></mxCell>
+</root></mxGraphModel></diagram></mxfile>
