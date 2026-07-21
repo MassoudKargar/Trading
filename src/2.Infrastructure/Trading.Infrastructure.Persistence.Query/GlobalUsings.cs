@@ -2,4 +2,5 @@
 
 global using Base.Infra.Data.Sql.Queries;
 global using Microsoft.EntityFrameworkCore;
+global using Trading.Core.Resources.Shared.Base;
 global using Trading.Infrastructure.Persistence.Query.Common;

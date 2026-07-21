@@ -1,9 +1,8 @@
-﻿using Base.Extensions.Caching.Abstractions;
-
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Base.Extensions.Caching.Abstractions;
 
 using Trading.Infrastructure.Persistence.Command.Common;
 using Trading.Infrastructure.Persistence.Query.Common;
+using Trading.Infrastructure.Persistence.Query.DependencyInjection;
 
 namespace Trading.Endpoints.API.Extensions;
 
@@ -26,7 +25,6 @@ public static class HostingExtensions
         {
             option.AssemblyNamesForLoadProfiles = "Trading";
         });
-        //cacheAdapter.Add(Key, Value, DateTime.Now.AddDays(1), null);
         builder.Services.AddBaseRedisDistributedCache(configuration, "Redis");
 
         builder.Services.AddDbContext<TradingCommandDbContext>(c => c
@@ -34,6 +32,7 @@ public static class HostingExtensions
             .AddInterceptors(new SetPersianYeKeInterceptor(), new AddAuditDataInterceptor()));
         builder.Services.AddDbContext<TradingQueryDbContext>(c =>
             c.UseSqlServer(configuration.GetConnectionString("QueryDb_ConnectionString")));
+        builder.Services.AddTradingQueryPersistence();
         builder.Services.AddScoped<TradingCommandDbContextFactory>();
 
         builder.Services.AddIdentityServer(configuration, "OAuth");
@@ -48,9 +47,13 @@ public static class HostingExtensions
         if (runMigrations)
         {
             using var scope = app.Services.CreateScope();
-            var db = scope.ServiceProvider.GetRequiredService<TradingQueryDbContext>();
-            db.Database.Migrate();
+            var commandDb = scope.ServiceProvider.GetRequiredService<TradingCommandDbContext>();
+            commandDb.Database.Migrate();
+
+            var queryDb = scope.ServiceProvider.GetRequiredService<TradingQueryDbContext>();
+            queryDb.Database.Migrate();
         }
+
         app.UseBaseObservabilityMiddleware();
         app.UseBaseApiExceptionHandler();
         app.UseOpenApiDocumentation("OpenApi");
