@@ -15,6 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\1.Core\Trading.Core.ApplicationService\Trading.Core.ApplicationService.csproj" />
+    <ProjectReference Include="..\..\1.Core\Trading.Core.Contracts\Trading.Core.Contracts.csproj" />
     <ProjectReference Include="..\..\1.Core\Trading.Core.Domain\Trading.Core.Domain.csproj" />
     <ProjectReference Include="..\..\1.Core\Trading.Core.Resources\Trading.Core.Resources.csproj" />
   </ItemGroup>
