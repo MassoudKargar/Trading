@@ -11,9 +11,15 @@ public sealed class GetTradeByIdQueryHandler(
         TradeQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetByIdAsync(
-                query.TradeId.Value!,
-                cancellationToken));
+        if (!query.TradeId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var trade = await repository.GetByIdAsync(
+            query.TradeId.Value,
+            cancellationToken);
+
+        return trade is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(trade);
     }
 }

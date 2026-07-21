@@ -13,9 +13,15 @@ public sealed class GetSymbolByIdQueryHandler(
         SymbolQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetByIdAsync(
-                query.SymbolId.Value!,
-                cancellationToken));
+        if (!query.SymbolId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var symbol = await repository.GetByIdAsync(
+            query.SymbolId.Value,
+            cancellationToken);
+
+        return symbol is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(symbol);
     }
 }

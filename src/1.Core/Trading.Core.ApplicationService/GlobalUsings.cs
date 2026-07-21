@@ -2,6 +2,7 @@
 
 global using Base.Core.ApplicationServices.Commands;
 global using Base.Core.ApplicationServices.Queries;
+global using Base.Core.RequestResponse.Common;
 global using Base.Core.RequestResponse.Commands;
 global using Base.Core.RequestResponse.Queries;
 global using Base.Utility;

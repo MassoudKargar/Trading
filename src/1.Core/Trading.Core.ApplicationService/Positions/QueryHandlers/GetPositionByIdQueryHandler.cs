@@ -12,9 +12,15 @@ public sealed class GetPositionByIdQueryHandler(
         PositionQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetByIdAsync(
-                query.PositionId.Value,
-                cancellationToken));
+        if (!query.PositionId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var position = await repository.GetByIdAsync(
+            query.PositionId.Value,
+            cancellationToken);
+
+        return position is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(position);
     }
 }

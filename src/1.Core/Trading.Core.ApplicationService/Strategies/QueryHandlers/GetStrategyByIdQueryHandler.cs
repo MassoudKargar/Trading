@@ -13,9 +13,15 @@ public sealed class GetStrategyByIdQueryHandler(
         StrategyQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetByIdAsync(
-                query.StrategyId.Value!,
-                cancellationToken));
+        if (!query.StrategyId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var strategy = await repository.GetByIdAsync(
+            query.StrategyId.Value,
+            cancellationToken);
+
+        return strategy is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(strategy);
     }
 }

@@ -13,9 +13,15 @@ public sealed class GetIndicatorValueQueryHandler(
         IndicatorQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetValueAsync(
-                query.IndicatorId.Value!,
-                cancellationToken));
+        if (!query.IndicatorId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var value = await repository.GetValueAsync(
+            query.IndicatorId.Value,
+            cancellationToken);
+
+        return value is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(value);
     }
 }

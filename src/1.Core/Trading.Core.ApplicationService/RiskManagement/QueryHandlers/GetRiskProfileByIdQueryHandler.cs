@@ -13,9 +13,15 @@ public sealed class GetRiskProfileByIdQueryHandler(
         RiskProfileQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetByIdAsync(
-                query.RiskProfileId.Value!,
-                cancellationToken));
+        if (!query.RiskProfileId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var riskProfile = await repository.GetByIdAsync(
+            query.RiskProfileId.Value,
+            cancellationToken);
+
+        return riskProfile is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(riskProfile);
     }
 }

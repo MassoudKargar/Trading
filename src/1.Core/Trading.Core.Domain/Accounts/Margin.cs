@@ -19,7 +19,7 @@ public sealed class Margin : BaseValueObject<Margin>
 
     public decimal Total => Used + Free;
 
-    protected override IEnumerable<object?> GetEqualityComponents()
+    protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Used;
         yield return Free;

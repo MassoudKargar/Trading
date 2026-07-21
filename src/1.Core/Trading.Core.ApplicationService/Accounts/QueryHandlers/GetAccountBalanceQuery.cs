@@ -11,7 +11,13 @@ public sealed class GetAccountBalanceQuery(
         AccountQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetBalanceAsync(query.AccountId!.Value, cancellationToken));
+        if (!query.AccountId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var balance = await repository.GetBalanceAsync(query.AccountId.Value, cancellationToken);
+
+        return balance is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(balance);
     }
 }

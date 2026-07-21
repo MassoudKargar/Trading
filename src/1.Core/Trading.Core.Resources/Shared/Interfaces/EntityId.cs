@@ -1,118 +1,89 @@
-﻿using System.Security.Cryptography;
-
 namespace Trading.Core.Resources.Shared.Interfaces;
 
-public abstract record EntityId(Guid Value): IComparable, IComparable<Guid>, IConvertible, IEquatable<Guid>, IFormattable
+public abstract record EntityId(Guid Value) : IComparable, IComparable<Guid>, IConvertible, IEquatable<Guid>, IFormattable
 {
     public static Guid NewId()
         => Guid.CreateVersion7();
 
     public int CompareTo(Guid other)
-    {
-        throw new NotImplementedException();
-    }
+        => Value.CompareTo(other);
 
     public virtual bool Equals(Guid other)
-    {
-        throw new NotImplementedException();
-    }
+        => Value.Equals(other);
 
     public override string ToString()
-        => $"{nameof(Value)}: {Value}";
+        => Value.ToString();
 
     public int CompareTo(object? obj)
-    {
-        throw new NotImplementedException();
-    }
+        => obj switch
+        {
+            null => 1,
+            Guid guid => CompareTo(guid),
+            EntityId entityId => CompareTo(entityId.Value),
+            _ => throw new ArgumentException($"Object must be a {nameof(Guid)} or {nameof(EntityId)}.", nameof(obj))
+        };
 
     public string ToString(string? format, IFormatProvider? formatProvider)
-    {
-        FormattableString formattable = $"{nameof(Value)}: {Value}";
-        return formattable.ToString(formatProvider);
-    }
+        => Value.ToString(format);
 
     public TypeCode GetTypeCode()
-    {
-        throw new NotImplementedException();
-    }
+        => TypeCode.Object;
 
     public bool ToBoolean(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<bool>();
 
     public byte ToByte(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<byte>();
 
     public char ToChar(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<char>();
 
     public DateTime ToDateTime(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<DateTime>();
 
     public decimal ToDecimal(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<decimal>();
 
     public double ToDouble(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<double>();
 
     public short ToInt16(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<short>();
 
     public int ToInt32(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<int>();
 
     public long ToInt64(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<long>();
 
     public sbyte ToSByte(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<sbyte>();
 
     public float ToSingle(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<float>();
 
     public string ToString(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => Value.ToString();
 
     public object ToType(Type conversionType, IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => conversionType == typeof(Guid)
+            ? Value
+            : conversionType == typeof(string)
+                ? Value.ToString()
+                : conversionType == typeof(object)
+                    ? this
+                    : throw new InvalidCastException(
+                        $"Cannot convert {GetType().Name} to {conversionType.Name}.");
 
     public ushort ToUInt16(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<ushort>();
 
     public uint ToUInt32(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<uint>();
 
     public ulong ToUInt64(IFormatProvider? provider)
-    {
-        throw new NotImplementedException();
-    }
+        => throw InvalidConversion<ulong>();
+
+    private InvalidCastException InvalidConversion<T>()
+        => new($"Cannot convert {GetType().Name} to {typeof(T).Name}.");
 }

@@ -13,9 +13,15 @@ public sealed class GetPortfolioStatisticsQueryHandler(
         PortfolioQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetStatisticsAsync(
-                query.PortfolioId.Value!,
-                cancellationToken));
+        if (!query.PortfolioId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var statistics = await repository.GetStatisticsAsync(
+            query.PortfolioId.Value,
+            cancellationToken);
+
+        return statistics is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(statistics);
     }
 }

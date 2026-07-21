@@ -11,7 +11,13 @@ public sealed class GetAccountMarginQuery(
         AccountQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetMarginAsync(query.AccountId!.Value, cancellationToken));
+        if (!query.AccountId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var margin = await repository.GetMarginAsync(query.AccountId.Value, cancellationToken);
+
+        return margin is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(margin);
     }
 }

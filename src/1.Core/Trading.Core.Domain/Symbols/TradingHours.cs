@@ -24,6 +24,12 @@ public sealed class TradingHours : BaseValueObject<TradingHours>
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-        throw new NotImplementedException();
+        foreach (var session in _sessions.OrderBy(x => x.Day))
+        {
+            yield return session.Day;
+            yield return session.OpenTime;
+            yield return session.CloseTime;
+            yield return session.IsTradingDay;
+        }
     }
 }

@@ -11,7 +11,13 @@ public sealed class GetAccountByIdQuery(
         AccountQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetByIdAsync(query.AccountId!.Value, cancellationToken));
+        if (!query.AccountId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var account = await repository.GetByIdAsync(query.AccountId.Value, cancellationToken);
+
+        return account is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(account);
     }
 }

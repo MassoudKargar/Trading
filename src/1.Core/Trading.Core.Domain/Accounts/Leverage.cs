@@ -12,7 +12,7 @@ public sealed class Leverage : BaseValueObject<Leverage>
         Value = value;
     }
 
-    protected override IEnumerable<object?> GetEqualityComponents()
+    protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
     }

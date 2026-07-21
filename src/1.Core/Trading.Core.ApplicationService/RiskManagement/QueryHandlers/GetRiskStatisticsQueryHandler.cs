@@ -13,9 +13,15 @@ public sealed class GetRiskStatisticsQueryHandler(
         RiskProfileQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetStatisticsAsync(
-                query.RiskProfileId.Value!,
-                cancellationToken));
+        if (!query.RiskProfileId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var statistics = await repository.GetStatisticsAsync(
+            query.RiskProfileId.Value,
+            cancellationToken);
+
+        return statistics is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(statistics);
     }
 }

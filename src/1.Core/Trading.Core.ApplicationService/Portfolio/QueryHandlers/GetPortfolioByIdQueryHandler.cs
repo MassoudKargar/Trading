@@ -13,9 +13,15 @@ public sealed class GetPortfolioByIdQueryHandler(
         PortfolioQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetByIdAsync(
-                query.PortfolioId.Value!,
-                cancellationToken));
+        if (!query.PortfolioId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var portfolio = await repository.GetByIdAsync(
+            query.PortfolioId.Value,
+            cancellationToken);
+
+        return portfolio is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(portfolio);
     }
 }

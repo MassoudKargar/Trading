@@ -30,7 +30,7 @@ public sealed class Balance : BaseValueObject<Balance>
         return new Balance(Amount - amount);
     }
 
-    protected override IEnumerable<object?> GetEqualityComponents()
+    protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Amount;
     }

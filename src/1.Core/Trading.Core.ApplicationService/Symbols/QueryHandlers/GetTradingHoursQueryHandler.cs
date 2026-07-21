@@ -13,9 +13,15 @@ public sealed class GetTradingHoursQueryHandler(
         SymbolQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetTradingHoursAsync(
-                query.SymbolId.Value!,
-                cancellationToken));
+        if (!query.SymbolId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var tradingHours = await repository.GetTradingHoursAsync(
+            query.SymbolId.Value,
+            cancellationToken);
+
+        return tradingHours is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(tradingHours);
     }
 }

@@ -11,9 +11,15 @@ public sealed class GetOrderByIdQueryHandler(
         OrderQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetByIdAsync(
-                query.OrderId.Value,
-                cancellationToken));
+        if (!query.OrderId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var order = await repository.GetByIdAsync(
+            query.OrderId.Value,
+            cancellationToken);
+
+        return order is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(order);
     }
 }

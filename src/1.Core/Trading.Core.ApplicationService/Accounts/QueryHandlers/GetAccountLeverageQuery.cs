@@ -11,7 +11,13 @@ public sealed class GetAccountLeverageQuery(
         AccountQueryFilter query,
         CancellationToken cancellationToken)
     {
-        return await ResultAsync(
-            await repository.GetLeverageAsync(query.AccountId!.Value, cancellationToken));
+        if (!query.AccountId.HasValue)
+            return Result(default!, ApplicationServiceStatus.NotFound);
+
+        var leverage = await repository.GetLeverageAsync(query.AccountId.Value, cancellationToken);
+
+        return leverage is null
+            ? Result(default!, ApplicationServiceStatus.NotFound)
+            : await ResultAsync(leverage);
     }
 }
