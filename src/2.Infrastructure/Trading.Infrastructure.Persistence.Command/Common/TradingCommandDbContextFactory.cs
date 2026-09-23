@@ -1,4 +1,10 @@
-﻿namespace Trading.Infrastructure.Persistence.Command.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using Base.Infra.Data.Sql.Commands.Interceptors;
+using System.IO;
+
+namespace Trading.Infrastructure.Persistence.Command.Common;
 
 public class TradingCommandDbContextFactory : IDesignTimeDbContextFactory<TradingCommandDbContext>
 {
@@ -12,7 +18,8 @@ public class TradingCommandDbContextFactory : IDesignTimeDbContextFactory<Tradin
 
         var connectionString = configuration.GetConnectionString("CommandDb_ConnectionString") ?? throw new NullReferenceException("CommandDb_ConnectionString is null");
         var builder = new DbContextOptionsBuilder<TradingCommandDbContext>();
-        builder.UseSqlServer(connectionString);
+        builder.UseSqlServer(connectionString)
+            .AddInterceptors(new SetPersianYeKeInterceptor(), new AddAuditDataInterceptor());
 
         return new TradingCommandDbContext(builder.Options);
     }

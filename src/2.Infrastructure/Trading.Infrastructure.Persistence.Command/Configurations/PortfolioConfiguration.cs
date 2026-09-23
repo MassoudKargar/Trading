@@ -1,7 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using Trading.Core.Domain.Portfolio;
 using Trading.Infrastructure.Persistence.Command.Configurations.Common;
+
+namespace Trading.Infrastructure.Persistence.Command.Configurations;
 
 public sealed class PortfolioConfiguration
     : ConfigurationBase<Portfolio>
@@ -21,27 +24,37 @@ public sealed class PortfolioConfiguration
 
         builder.Property(x => x.UpdatedAt);
 
-        builder.OwnsOne(x => x.Statistics, statistics =>
+        builder.OwnsOne(x => x.Statistics, stats =>
         {
-            statistics.Property(x => x.Balance)
+            stats.Property(x => x.Balance)
+                .HasColumnName("Statistics_Balance")
+                .HasPrecision(18, 8)
+                .IsRequired();
+
+            stats.Property(x => x.Equity)
+                .HasColumnName("Statistics_Equity")
+                .HasPrecision(18, 8)
+                .IsRequired();
+
+            stats.Property(x => x.FloatingProfit)
+                .HasColumnName("Statistics_FloatingProfit")
+                .HasPrecision(18, 8)
+                .IsRequired();
+
+            stats.Property(x => x.RealizedProfit)
+                .HasColumnName("Statistics_RealizedProfit")
+                .HasPrecision(18, 8)
+                .IsRequired();
+
+            stats.Property(x => x.Drawdown)
+                .HasColumnName("Statistics_Drawdown")
                 .HasPrecision(18, 8);
 
-            statistics.Property(x => x.Equity)
+            stats.Property(x => x.MaxDrawdown)
+                .HasColumnName("Statistics_MaxDrawdown")
                 .HasPrecision(18, 8);
 
-            statistics.Property(x => x.FloatingProfit)
-                .HasPrecision(18, 8);
-
-            statistics.Property(x => x.RealizedProfit)
-                .HasPrecision(18, 8);
-
-            statistics.Property(x => x.Drawdown)
-                .HasPrecision(18, 8);
-
-            statistics.Property(x => x.MaxDrawdown)
-                .HasPrecision(18, 8);
-
-            statistics.Ignore(x => x.TotalProfit);
+            stats.Ignore(x => x.TotalProfit);
         });
 
         builder.HasIndex(x => x.AccountId)

@@ -21,7 +21,6 @@ public sealed class CandleConfiguration
             .IsRequired();
 
         builder.Property(x => x.TimeFrame)
-            .HasMaxLength(20)
             .IsRequired();
 
         builder.Property(x => x.OpenTime)
@@ -30,40 +29,34 @@ public sealed class CandleConfiguration
         builder.Property(x => x.CloseTime);
 
         builder.Property(x => x.Open)
-            .HasPrecision(18, 8);
+            .HasPrecision(18, 8)
+            .IsRequired();
 
         builder.Property(x => x.High)
-            .HasPrecision(18, 8);
+            .HasPrecision(18, 8)
+            .IsRequired();
 
         builder.Property(x => x.Low)
-            .HasPrecision(18, 8);
+            .HasPrecision(18, 8)
+            .IsRequired();
 
         builder.Property(x => x.Close)
-            .HasPrecision(18, 8);
+            .HasPrecision(18, 8)
+            .IsRequired();
 
         builder.Property(x => x.Volume)
-            .HasPrecision(18, 8);
+            .HasPrecision(18, 8)
+            .IsRequired();
 
         builder.Property(x => x.IsClosed)
             .IsRequired();
 
-        builder.HasIndex(x => x.Symbol);
-
-        builder.HasIndex(x => x.OpenTime);
-
-        builder.HasIndex(x => new
-            {
-                x.Symbol,
-                x.TimeFrame,
-                x.OpenTime
-            })
+        builder.HasIndex(x => new { x.Symbol, x.TimeFrame, x.OpenTime })
             .IsUnique();
 
-        builder.HasIndex(x => new
-        {
-            x.Symbol,
-            x.TimeFrame,
-            x.IsClosed
-        });
+        builder.HasIndex(x => x.Symbol);
+        builder.HasIndex(x => x.TimeFrame);
+        builder.HasIndex(x => x.OpenTime);
+        builder.HasIndex(x => x.IsClosed);
     }
 }

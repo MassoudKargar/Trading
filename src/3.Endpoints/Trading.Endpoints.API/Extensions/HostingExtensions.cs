@@ -36,8 +36,10 @@ public static class HostingExtensions
         builder.Services.AddScoped<TradingCommandDbContextFactory>();
 
         builder.Services.AddIdentityServer(configuration, "OAuth");
-
-        builder.Services.AddOpenApiDocumentation(configuration, "OpenApi");
+        
+        // Add Swagger
+        builder.Services.AddSwaggerGen();
+        
         return builder.Build();
     }
 
@@ -56,7 +58,8 @@ public static class HostingExtensions
 
         app.UseBaseObservabilityMiddleware();
         app.UseBaseApiExceptionHandler();
-        app.UseOpenApiDocumentation("OpenApi");
+        app.UseSwagger();
+        app.UseSwaggerUI();
         app.UseStatusCodePages();
         app.UseCors(delegate (CorsPolicyBuilder builder)
         {

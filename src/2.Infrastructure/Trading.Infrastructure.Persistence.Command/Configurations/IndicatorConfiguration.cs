@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using Trading.Core.Domain.Indicators;
 using Trading.Infrastructure.Persistence.Command.Configurations.Common;
@@ -30,14 +31,6 @@ public sealed class IndicatorConfiguration
 
         builder.Property(x => x.UpdatedAt);
 
-        builder.OwnsOne(x => x.LastValue, lastValue =>
-        {
-            lastValue.Property(x => x.Value)
-                .HasPrecision(18, 8);
-
-            lastValue.Property(x => x.CalculatedAt);
-        });
-
         builder.OwnsMany(x => x.Parameters, parameters =>
         {
             parameters.WithOwner();
@@ -46,7 +39,7 @@ public sealed class IndicatorConfiguration
             parameters.HasKey("Id");
 
             parameters.Property(x => x.Name)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsRequired();
 
             parameters.Property(x => x.Value)
@@ -54,6 +47,13 @@ public sealed class IndicatorConfiguration
                 .IsRequired();
 
             parameters.ToTable("IndicatorParameters");
+        });
+
+        builder.OwnsOne(x => x.LastValue, lastValue =>
+        {
+            lastValue.Property(x => x.Value)
+                .HasColumnName("LastValue")
+                .HasPrecision(18, 8);
         });
 
         builder.HasIndex(x => x.Name)

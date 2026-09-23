@@ -6,7 +6,7 @@ global using Base.Core.ApplicationServices.Queries;
 global using Base.Core.RequestResponse.Commands;
 global using Base.Core.RequestResponse.Queries;
 global using Base.EndPoints.Web.Extensions.DependencyInjection;
-global using Base.EndPoints.Web.Extensions.Swaggers.Extensions;
+global using Base.EndPoints.Web.Extensions;
 global using Base.Extensions.DependencyInjection;
 global using Base.Infra.Data.Sql.Commands.Interceptors;
 

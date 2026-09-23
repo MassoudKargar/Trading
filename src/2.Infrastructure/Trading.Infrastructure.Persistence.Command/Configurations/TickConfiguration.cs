@@ -20,6 +20,10 @@ public sealed class TickConfiguration
             .HasMaxLength(50)
             .IsRequired();
 
+        builder.Property(x => x.Broker)
+            .HasMaxLength(30)
+            .IsRequired();
+
         builder.Property(x => x.Bid)
             .HasPrecision(18, 8)
             .IsRequired();
@@ -28,19 +32,23 @@ public sealed class TickConfiguration
             .HasPrecision(18, 8)
             .IsRequired();
 
-        builder.Ignore(x => x.Last);
+        builder.Property(x => x.LastPrice)
+            .HasPrecision(18, 8);
+
+        builder.Property(x => x.Volume)
+            .HasPrecision(18, 8);
 
         builder.Property(x => x.Time)
             .IsRequired();
 
+        builder.Property(x => x.ServerTime)
+            .IsRequired();
+
+        builder.Property(x => x.ReceivedAt)
+            .IsRequired();
+
         builder.HasIndex(x => x.Symbol);
-
         builder.HasIndex(x => x.Time);
-
-        builder.HasIndex(x => new
-        {
-            x.Symbol,
-            x.Time
-        });
+        builder.HasIndex(x => new { x.Symbol, x.Time });
     }
 }

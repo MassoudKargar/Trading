@@ -1,5 +1,6 @@
 using Trading.Core.Contracts.Orders;
 using Trading.Core.Contracts.Orders.QueryResults;
+using Trading.Core.Resources.Enumerations.Orders;
 
 namespace Trading.Infrastructure.Persistence.Query.Repositories;
 
@@ -19,6 +20,27 @@ public sealed class OrderQueryRepository(TradingQueryDbContext dbContext)
                 Price = x.Price,
                 FilledVolume = x.FilledVolume,
                 FilledPrice = x.FilledPrice,
+                Status = x.Status,
+                CreatedAt = x.CreatedAt
+            });
+
+    public IQueryable<GetOpenOrdersQueryResult> GetAllOpen()
+        => dbContext.Orders
+            .AsNoTracking()
+            .Where(x => x.Status == OrderStatus.Pending
+                     || x.Status == OrderStatus.Submitted
+                     || x.Status == OrderStatus.Accepted
+                     || x.Status == OrderStatus.PartiallyFilled)
+            .Select(x => new GetOpenOrdersQueryResult
+            {
+                OrderId = x.Id,
+                Symbol = x.Symbol,
+                OrderType = x.OrderType,
+                Side = x.Side,
+                Volume = x.Volume,
+                Price = x.Price,
+                StopLoss = x.StopLoss,
+                TakeProfit = x.TakeProfit,
                 Status = x.Status,
                 CreatedAt = x.CreatedAt
             });
